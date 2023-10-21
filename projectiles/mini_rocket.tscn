@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://ciumdbnf5km5h"]
+
+[ext_resource type="Script" path="res://projectiles/mini_rocket.gd" id="1_2usr7"]
+[ext_resource type="Texture2D" uid="uid://b8qquc4htl42n" path="res://projectiles/mini_rocket.png" id="1_jahm7"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_anv2f"]
+radius = 5.83333
+height = 20.0
+
+[node name="Mini_Rocket" type="Area2D"]
+scale = Vector2(0.15, 0.15)
+script = ExtResource("1_2usr7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_jahm7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-4.76837e-07, -20)
+scale = Vector2(12, 12)
+shape = SubResource("CapsuleShape2D_anv2f")

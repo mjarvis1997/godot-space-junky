@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://dgxxdc5x843e5"]
+
+[ext_resource type="Texture2D" uid="uid://ddves4aifh3of" path="res://player/player_ship_1.png" id="1_buwo0"]
+[ext_resource type="Texture2D" uid="uid://blgat61bx4kno" path="res://player/player_ship_1_left.png" id="2_ion3q"]
+[ext_resource type="Texture2D" uid="uid://ciaivkuysrhlj" path="res://player/player_ship_1_right.png" id="3_2yk83"]
+[ext_resource type="Script" path="res://player/player_ship_animated.gd" id="4_dgvl8"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4p0wu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_buwo0")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ion3q")
+}],
+"loop": true,
+"name": &"rotate_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_2yk83")
+}],
+"loop": true,
+"name": &"rotate_right",
+"speed": 5.0
+}]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
+position = Vector2(4, 0)
+scale = Vector2(0.1, 0.1)
+sprite_frames = SubResource("SpriteFrames_4p0wu")
+animation = &"rotate_right"
+script = ExtResource("4_dgvl8")
+
+[node name="ProjectileStart" type="Marker2D" parent="."]
+position = Vector2(-50, -830)
