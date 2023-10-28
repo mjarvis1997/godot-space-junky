@@ -39,11 +39,11 @@ func handle_movment(delta):
 		return
 	if Input.is_action_pressed("player_move_up"):
 		position.y -= speed * delta
-	elif Input.is_action_pressed("player_move_down"):
+	if Input.is_action_pressed("player_move_down"):
 		position.y += speed * delta
-	elif Input.is_action_pressed("player_move_right"):
+	if Input.is_action_pressed("player_move_right"):
 		position.x += speed * delta
-	elif Input.is_action_pressed("player_move_left"):
+	if Input.is_action_pressed("player_move_left"):
 		position.x -= speed * delta
 
 	
