@@ -1,14 +1,15 @@
-[gd_scene load_steps=10 format=3 uid="uid://cq850iq4va1y4"]
+[gd_scene load_steps=11 format=3 uid="uid://cq850iq4va1y4"]
 
 [ext_resource type="Script" path="res://level.gd" id="1_i6m5w"]
 [ext_resource type="Script" path="res://backgrounds/starry/parallax-background.gd" id="2_ghsj2"]
 [ext_resource type="Texture2D" uid="uid://douwc5mkyel5j" path="res://backgrounds/starry/starry-bg.png" id="3_k2np0"]
-[ext_resource type="PackedScene" uid="uid://dgxxdc5x843e5" path="res://player/player_ship_animated.tscn" id="3_xh8rk"]
 [ext_resource type="Texture2D" uid="uid://s1yqtc7u11eg" path="res://backgrounds/starry/starry-layer-1.png" id="4_flkpm"]
 [ext_resource type="Texture2D" uid="uid://8o85gk6ouw6v" path="res://backgrounds/starry/starry-layer-2.png" id="5_ikb8n"]
 [ext_resource type="Texture2D" uid="uid://batunoge0xx6a" path="res://backgrounds/starry/starry-layer-3.png" id="6_x5osu"]
 [ext_resource type="Texture2D" uid="uid://c5wfdoy0dxhy0" path="res://backgrounds/starry/starry-layer-4.png" id="7_jkxdl"]
-[ext_resource type="PackedScene" uid="uid://bsn0gf5707hcl" path="res://enemies/testEnemy/testEnemy.tscn" id="9_v2hkm"]
+[ext_resource type="PackedScene" uid="uid://cqrwyd3sqv6ya" path="res://ui/health_bar.tscn" id="9_y0ntg"]
+[ext_resource type="PackedScene" uid="uid://bkcsxroitbxve" path="res://enemies/enemy_1/enemy_1.tscn" id="11_osi36"]
+[ext_resource type="PackedScene" uid="uid://bd3lnj778cml" path="res://player/player.tscn" id="12_mvv56"]
 
 [node name="Level_1" type="Node2D"]
 script = ExtResource("1_i6m5w")
@@ -54,10 +55,13 @@ position = Vector2(960, 540)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("7_jkxdl")
 
-[node name="AnimatedSprite2D" parent="." instance=ExtResource("3_xh8rk")]
-position = Vector2(489, 514)
+[node name="health_bar" parent="." instance=ExtResource("9_y0ntg")]
+position = Vector2(20, 23)
 
-[node name="testEnemy" parent="." instance=ExtResource("9_v2hkm")]
-position = Vector2(225, 162)
+[node name="enemy_1" parent="." instance=ExtResource("11_osi36")]
+position = Vector2(20, 23)
 
-[connection signal="shoot" from="AnimatedSprite2D" to="." method="_on_player_shoot"]
+[node name="player" parent="." instance=ExtResource("12_mvv56")]
+position = Vector2(770, 532)
+
+[connection signal="shoot" from="player" to="." method="_on_player_shoot"]

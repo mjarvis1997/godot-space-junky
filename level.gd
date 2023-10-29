@@ -12,7 +12,6 @@ func _process(delta):
 
 
 func _on_player_shoot(Bullet, direction, position):
-	print('creating bullet')
 	var new_bullet = Bullet.instantiate()
 	add_child(new_bullet)
 	new_bullet.rotation = direction
