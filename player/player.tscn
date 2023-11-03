@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=3 uid="uid://bd3lnj778cml"]
+
+[ext_resource type="Script" path="res://player/health/health.gd" id="1_3w0en"]
+[ext_resource type="Texture2D" uid="uid://ddves4aifh3of" path="res://player/player_ship_1.png" id="1_i537b"]
+[ext_resource type="Script" path="res://player/player.gd" id="1_y3i55"]
+[ext_resource type="Texture2D" uid="uid://blgat61bx4kno" path="res://player/player_ship_1_left.png" id="2_otj6y"]
+[ext_resource type="Texture2D" uid="uid://ciaivkuysrhlj" path="res://player/player_ship_1_right.png" id="3_iu6jn"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6vqly"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_i537b")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_otj6y")
+}],
+"loop": true,
+"name": &"rotate_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_iu6jn")
+}],
+"loop": true,
+"name": &"rotate_right",
+"speed": 5.0
+}]
+
+[node name="player" type="CharacterBody2D" groups=["Player"]]
+script = ExtResource("1_y3i55")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(0, -98, 14, -62, 16, -30, 44, 1, 75, 19, 80, 59, 32, 39, 32, 55, 26, 73, 17, 72, 14, 59, 4, 67, -12, 61, -16, 73, -25, 73, -34, 36, -78, 65, -72, 15, -18, -30, -14, -65)
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(6, 0)
+scale = Vector2(0.1, 0.1)
+sprite_frames = SubResource("SpriteFrames_6vqly")
+animation = &"idle"
+
+[node name="Health" type="Node" parent="."]
+script = ExtResource("1_3w0en")
+
+[node name="ProjectileStart" type="Marker2D" parent="."]
+position = Vector2(1, -91)
