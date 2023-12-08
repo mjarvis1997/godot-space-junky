@@ -59,9 +59,7 @@ texture = ExtResource("7_jkxdl")
 position = Vector2(20, 23)
 
 [node name="enemy_1" parent="." instance=ExtResource("11_osi36")]
-position = Vector2(20, 23)
+position = Vector2(-130, 180)
 
 [node name="player" parent="." instance=ExtResource("12_mvv56")]
 position = Vector2(770, 532)
-
-[connection signal="shoot" from="player" to="." method="_on_player_shoot"]

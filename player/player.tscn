@@ -37,11 +37,12 @@ animations = [{
 script = ExtResource("1_y3i55")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2(0.75, 0.75)
 polygon = PackedVector2Array(0, -98, 14, -62, 16, -30, 44, 1, 75, 19, 80, 59, 32, 39, 32, 55, 26, 73, 17, 72, 14, 59, 4, 67, -12, 61, -16, 73, -25, 73, -34, 36, -78, 65, -72, 15, -18, -30, -14, -65)
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(6, 0)
-scale = Vector2(0.1, 0.1)
+scale = Vector2(0.075, 0.075)
 sprite_frames = SubResource("SpriteFrames_6vqly")
 animation = &"idle"
 
